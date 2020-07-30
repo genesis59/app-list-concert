@@ -1,19 +1,20 @@
 <ion-header [translucent]="true">
   <ion-toolbar color="primary">
     <ion-title>
-      CONCERTS
+      Concerts
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content class="padding" >
-  <ion-item color="secondary">
+<ion-content class="padding">
+  <ion-button expand="full" routerLink="/stats">Statistiques</ion-button>
+  <ion-item color="medium" class="border">
     <p>Listes des concerts</p>
     <ion-button slot="end" routerLink="/new-concert">
       <ion-icon name="add"></ion-icon>
     </ion-button>
   </ion-item>
-  <ion-grid *ngFor="let concert of concertList">
+  <ion-grid *ngFor="let concert of concertList" class="borderbottom">
     <ion-row>
       <ion-col size="4">Salle :</ion-col>
       <ion-col size="6">{{ concert.place }}</ion-col>
@@ -28,7 +29,9 @@
     </ion-row>
     <ion-row>
       <ion-col size="4">Note :</ion-col>
-      <ion-col size="6"><app-star [(starValue)]="concert.Score"></app-star></ion-col>
+      <ion-col size="6">
+        <app-star [(starValue)]="concert.Score"></app-star>
+      </ion-col>
     </ion-row>
     <ion-item color="secondary">
       <ion-button slot="start" (click)="delete(concert)" color="danger">
@@ -37,4 +40,5 @@
       <p>Supprimer de la liste</p>
     </ion-item>
   </ion-grid>
+
 </ion-content>

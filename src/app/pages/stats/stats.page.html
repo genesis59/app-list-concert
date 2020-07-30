@@ -1,0 +1,46 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-item color="primary">
+    <ion-button slot="start" name="icon-only" routerLink="/home">
+      <ion-icon name="arrow-back-circle"></ion-icon>
+    </ion-button>
+    <ion-title>statistiques</ion-title>
+  </ion-item>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-item color="secondary">
+    <ion-label>Selectionnez une salle :</ion-label>
+    <ion-select [(ngModel)]="salle" (ionChange)="statBySalle()">
+      <ion-select-option>Zénith de Lille</ion-select-option>
+      <ion-select-option>Bataclan</ion-select-option>
+      <ion-select-option>AccorHotels Arena</ion-select-option>
+      <ion-select-option>Bus Palladium</ion-select-option>
+      <ion-select-option>Moulin rouge</ion-select-option>
+      <ion-select-option>Olympia</ion-select-option>
+      <ion-select-option>Casino de Paris</ion-select-option>
+    </ion-select>
+  </ion-item>
+  <ion-item>
+    <p *ngIf="showMessage">{{ notScore }}</p>
+    <p *ngIf="!showMessage">La note moyenne des concerts de cette salle est : {{ moySalle }}</p>
+  </ion-item>
+  <ion-item color="secondary">
+    <ion-label>Selectionnez un groupe :</ion-label>
+    <ion-select [(ngModel)]="groupe" (ionChange)="StatByGroup()">
+      <ion-select-option>The Beatles</ion-select-option>
+      <ion-select-option>Pink Floyd</ion-select-option>
+      <ion-select-option>Maroon 5</ion-select-option>
+      <ion-select-option>Imagine dragons</ion-select-option>
+      <ion-select-option>ACDC</ion-select-option>
+      <ion-select-option>Muse</ion-select-option>
+      <ion-select-option>The offspring</ion-select-option>
+    </ion-select>
+  </ion-item>
+  <ion-item>
+    <p *ngIf="showMessage">{{ notScore }}</p>
+    <p *ngIf="!showMessage">La note moyenne des concerts de cette salle est : {{ moyGroup }}</p>
+  </ion-item>
+
+</ion-content>

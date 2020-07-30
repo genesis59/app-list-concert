@@ -16,10 +16,6 @@ export class StarComponent implements OnInit {
   @Input() starValue;
   @Output() starValueChange: EventEmitter<number>;
 
-
-
-
-
   constructor() {
     this.starValueChange = new EventEmitter<number>();
   }
@@ -32,7 +28,6 @@ export class StarComponent implements OnInit {
 
   setStarValue(n: number) {
     this.starValue = n;
-    console.log(this.starValue);
     this.starValueChange.emit(n);
   }
 

@@ -21,13 +21,9 @@ export class ConcertsService {
   public concertList: ConcertsInterface[] = [];
   public concertListChanged: Subject<ConcertsInterface[]>;
 
-
-
   constructor(private http: HttpClient) {
     this.concertListChanged = new Subject<ConcertsInterface[]>();
   }
-
-
 
   public loadConcert() {
     this.http.get(URL).subscribe(
@@ -41,9 +37,6 @@ export class ConcertsService {
   public addConcert(concert: ConcertsInterface) {
     this.http.post(URL, concert).subscribe(
       (data: ConcertsInterface) => {
-        
-        console.log(data);
-        
         this.concertList.push(data);
         this.concertListChanged.next(this.concertList);
       }

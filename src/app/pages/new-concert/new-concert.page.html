@@ -1,18 +1,25 @@
 <ion-header>
   <ion-toolbar color="primary">
-    <ion-back-button slot="start" color="light"></ion-back-button>
-    <ion-title>Ajouter un concert</ion-title>
+    <ion-item color="primary">
+    <ion-button slot="start" name="icon-only" routerLink="/home">
+      <ion-icon name="arrow-back-circle"></ion-icon>
+    </ion-button>
+    <ion-title>Ajouter</ion-title>
+  </ion-item>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
+  <ion-item>
+    <p>Remplissez le formulaire pour ajouter un concert à votre liste.</p>
+  </ion-item>
   <ion-grid>
-    <ion-row>
+    <ion-row class="rowup">
       <ion-col>
         <ion-label>Salle :</ion-label>
       </ion-col>
       <ion-col>
-        <ion-select color="primary" [(ngModel)]="concert.place">
+        <ion-select [(ngModel)]="concert.place">
           <ion-select-option>Zénith de Lille</ion-select-option>
           <ion-select-option>Bataclan</ion-select-option>
           <ion-select-option>AccorHotels Arena</ion-select-option>
@@ -23,15 +30,25 @@
         </ion-select>
       </ion-col>
     </ion-row>
-    <ion-row>
-      <ion-col size="4">
+    <ion-row class="rowdown">
+      <ion-col>
         <ion-label>Groupe :</ion-label>
       </ion-col>
-      <ion-col size="8">
-        <ion-input type="text" [(ngModel)]="concert.Group"></ion-input>
+      <ion-col>
+        <ion-col>
+          <ion-select [(ngModel)]="concert.Group">
+            <ion-select-option>The Beatles</ion-select-option>
+            <ion-select-option>Pink Floyd</ion-select-option>
+            <ion-select-option>Maroon 5</ion-select-option>
+            <ion-select-option>Imagine dragons</ion-select-option>
+            <ion-select-option>ACDC</ion-select-option>
+            <ion-select-option>Muse</ion-select-option>
+            <ion-select-option>The offspring</ion-select-option>
+          </ion-select>
+        </ion-col>
       </ion-col>
     </ion-row>
-    <ion-row>
+    <ion-row class="rowdown">
       <ion-col size="4">
         <ion-label>Date :</ion-label>
       </ion-col>
@@ -39,7 +56,7 @@
         <ion-input type="date" [(ngModel)]="concert.date"></ion-input>
       </ion-col>
     </ion-row>
-    <ion-row>
+    <ion-row class="rowdown">
       <ion-col size="4">
         <ion-label>Note :</ion-label>
       </ion-col>

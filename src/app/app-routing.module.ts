@@ -15,6 +15,10 @@ const routes: Routes = [
     path: 'new-concert',
     loadChildren: () => import('./pages/new-concert/new-concert.module').then( m => m.NewConcertPageModule)
   },
+  {
+    path: 'stats',
+    loadChildren: () => import('./pages/stats/stats.module').then( m => m.StatsPageModule)
+  },
 ];
 
 @NgModule({
